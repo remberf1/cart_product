@@ -1,0 +1,101 @@
+@use './variables.scss' as vars;
+
+
+.cartPanel{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color:white;
+    border-radius: 15px;
+    width: 100%;
+}
+.cartContent{
+    overflow-y: auto;
+    max-height: 70vh;
+    /* Scrollbar width */
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+  }
+
+  /* Thumb */
+  &::-webkit-scrollbar-thumb {
+    background: #CAAFA7;
+    border-radius: 4px;
+  }
+
+  /* Thumb hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: vars.$Rose_900;
+  }
+}
+.title{
+    font-family: 'RedhatBold';
+    color: vars.$Red;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1rem;
+}
+.emptyState{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.totalRow{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'RedhatBOld';
+    color: vars.$Rose_900;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-top: 1rem;
+}
+.totalLabel{
+    font-family: 'RedhatReg';
+    color: vars.$Rose_500;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.neutralWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: vars.$Rose_50;
+}
+
+.deliveryText{
+    color: vars.$Rose_900;
+    font-family: 'RedhatReg';
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+.neutralText{
+    color: vars.$Rose_900;
+    font-family: 'RedhatBold';
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.confirmBtn{
+    background-color: vars.$Red;
+    border:none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-family: 'RedhatReg';
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+          background-color: darken(vars.$Red, 10%);
+    }
+}

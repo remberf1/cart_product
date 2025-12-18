@@ -1,0 +1,103 @@
+@use './variables' as vars;
+
+// FONTS
+@font-face {
+  font-family: "RedhatReg";
+  src: url('/assets/fonts/static/RedHatText-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: "RedhatMed";
+  src: url('/assets/fonts/static/RedHatText-SemiBold.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: "RedhatBold";
+  src: url('/assets/fonts/static/RedHatText-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: "RedHatText";
+  src: url("/assets/fonts/RedHatText-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;   /* variable range */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Variable font: italic */
+@font-face {
+  font-family: "RedHatText";
+  src: url("/assets/fonts/RedHatText-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+// GLOBAL ELEMENTS
+body {
+  font-family: 'RedhatReg', sans-serif;
+  background-color: vars.$Rose_100;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+.title {
+  font-family: 'RedhatBold', sans-serif;
+  font-size: calc(2.5rem + 1vw);
+  color: vars.$Rose_900;
+  // margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  // text-align: center;
+}
+
+// GLOBAL UTILITY CLASSES
+.home {
+  background-color: vars.$Rose_100;
+}
+.parentWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.contentWrapper {
+  // padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(1, 1fr);
+  max-width: 60%;
+}
+.cartWrapper{
+  padding: 1.25rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .contentWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .title{
+      font-size: calc(0.8rem + 0.5vw);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contentWrapper {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+  .parentWrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 2rem;
+  }
+  .cartWrapper{
+    width: 30%;
+    position:fixed;
+    top: 0;
+    right: 17rem;
+  }
+}

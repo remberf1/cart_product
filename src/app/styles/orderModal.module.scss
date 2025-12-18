@@ -1,0 +1,135 @@
+@use './variables' as vars;
+
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: min(100%, 420px);
+  animation: pop 0.2s ease;
+}
+
+.tickWrapper {
+  padding-bottom: 1.5rem;
+}
+
+.title{
+  font-family: 'RedhatBold';
+  font-size: 2.24rem;
+  max-width: 12ch;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: vars.$Rose_400;
+  margin-bottom: 1.5rem;
+}
+
+.summary {
+  background: vars.$Rose_50;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  
+  overflow-y: auto;          // 👈 enable scrolling
+  max-height: 40vh;   
+}
+
+.item,
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.total{
+  padding-top: 0.75rem;
+}
+.item{
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.75rem;
+}
+
+.itemImage img{
+  border-radius: 8px;
+  // margin-bottom: 1rem;
+}
+.itemName{
+  font-family: 'RedhatMed';
+  color: vars.$Rose_900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.itemQty{
+  font-family: 'RedhatBold';
+  color: vars.$Red;
+}
+.itemPrice{
+  font-family: 'RedhatReg';
+  color: vars.$Rose_500;
+}
+.itemDetails{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 50%;
+}
+.itemQtyPrice{
+  display: flex;
+  gap: 1rem;
+}
+.itemTotal{
+  font-family: 'RedhatMed';
+  color: vars.$Rose_900;
+  font-size: 1.25rem;
+  
+}
+
+.totalLabel{
+  font-family: 'RedhatReg';
+  color: vars.$Rose_900;
+}
+.totalPrice{
+  font-family: 'RedhatBold';
+  color: vars.$Rose_900;
+  font-size: 1.5rem;
+}
+
+.closeBtn {
+  width: 100%;
+  background: #c73b0f;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .title{
+    width: auto;
+  }
+}

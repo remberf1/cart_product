@@ -1,0 +1,68 @@
+@use './variables' as vars;
+
+.cartItem {
+  display: flex;
+  padding: 0.5rem 0;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid vars.$Rose_300;
+  width: 100%;
+}
+
+.quantity {
+  font-family: 'RedhatBold';
+  color: vars.$Red;
+  margin-right: 0.75rem;
+}
+.price{
+  font-family: 'RedhatReg';
+  color: vars.$Rose_500;
+}
+.subtotal{
+  font-family: 'RedhatMed';
+  color: vars.$Rose_500;
+}
+.itemInfoWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.itemInfo{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.itemName {
+  font-family: 'RedhatMed';
+  color: vars.$Rose_900;
+  padding-bottom: 0.5rem;
+  
+}
+
+
+.removeBtn{
+  background-color: transparent;
+  border:2px solid vars.$Rose_500;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: .2rem;
+  color: #CAAFA7;
+}
+
+.removeBtn:hover{
+  border-color: vars.$Rose_900;
+  .removeBtn{
+    color: vars.$Rose_900;
+    fill: vars.$Rose_900;
+  }
+}
+
+.removeIcon {
+  fill: #CAAFA7; // or vars.$Rose_500
+}
+.removeBtn:hover{
+
+  .removeIcon:hover{
+    fill: vars.$Rose_900; // or vars.$Rose_900
+  }
+}
